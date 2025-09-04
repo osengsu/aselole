@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aselole Store</title>
+    <link rel="stylesheet" href="produk.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Aselole Store</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html" class="active">Produk</a>
+        <a href="#cart">Keranjang</a>
+      </nav>
+    </header>
+    <main>
+      <section id="produk" class="produk">
+        <h2>Produk</h2>
+        <div class="produk-grid">
+          <div class="produk-card">
+            <img src="eko.jpg" alt="Bot Ekonomi" />
+            <h3>Script Bot Ekonomi</h3>
+            <p class="harga">Rp5.000</p>
+            <p>
+              Bot ekonomi dengan fitur balance, daily, pay, slot, dan
+              konfigurasi berbasis JSON.
+            </p>
+            <button
+              class="add-cart"
+              data-name="Script Bot Ekonomi"
+              data-price="5000"
+            >
+              Tambah ke Keranjang
+            </button>
+          </div>
+          <div class="produk-card">
+            <img src="adm.jpg" alt="Bot Admin" />
+            <h3>Script Bot Admin</h3>
+            <p class="harga">Rp5.000</p>
+            <p>
+              Bot admin moderasi server: kick/ban, clear chat, anti-spam dasar,
+              dan log sederhana.
+            </p>
+            <button
+              class="add-cart"
+              data-name="Script Bot Admin"
+              data-price="5000"
+            >
+              Tambah ke Keranjang
+            </button>
+          </div>
+          <div class="produk-card">
+            <img src="msk.jpg" alt="Bot Musik" />
+            <h3>Script Bot Musik</h3>
+            <p class="harga">Rp10.000</p>
+            <p>
+              Bot musik dengan perintah play, pause, skip, queue. Siap dipakai
+              di server kamu.
+            </p>
+            <button
+              class="add-cart"
+              data-name="Script Bot Musik"
+              data-price="10000"
+            >
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="cart">
+        <h3>Keranjang</h3>
+        <div id="cart-items">Belum ada item</div>
+        <p>Total: Rp<span id="cart-total">0</span></p>
+        <button id="checkout">Checkout via WhatsApp</button>
+      </aside>
+    </main>
+
+    <footer id="bantuan">
+      <p>WhatsApp: <a href="https://wa.me/6285640847402">085640847402</a></p>
+      <p>Discord: <a href="https://discord.gg/sejEtPSKt5">Aselole Store</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

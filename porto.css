@@ -1,0 +1,306 @@
+/* ========== Global ========== */
+body {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  background: #0a0f1f;
+  color: #e0e0e0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* ========== Navbar ========== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: rgba(10, 15, 31, 0.6);
+  border-bottom: 1px solid #00ffff55;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 255, 255, 0.2);
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff99);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+nav ul li a:hover {
+  color: #00ffff;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #00ffff;
+  transition: width 0.3s;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ========== Hero ========== */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #0d0d1a;
+}
+
+.hero-title {
+  font-size: 48px;
+  color: #00ffff;
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00ffff;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ========== Card ========== */
+.card {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  border: 2px solid #00ffff55;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h2 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card .highlight {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* ========== Education ========== */
+#education {
+  text-align: left;
+}
+
+.edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-list li {
+  margin-bottom: 14px;
+  padding-left: 28px;
+  position: relative;
+  font-size: 15px;
+}
+
+.edu-list li i {
+  margin-right: 10px;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* ========== Skills ========== */
+#skills {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#skills h2 {
+  color: #ff00ff;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 14px;
+  border: 2px solid #00ffff55;
+  width: 140px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card i {
+  font-size: 42px;
+  margin-bottom: 12px;
+  color: #00ffff;
+  transition: color 0.3s;
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.skill-card:hover i {
+  color: #ff00ff;
+}
+
+/* ========== Projects ========== */
+#projects {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  color: #ff00ff;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 40px 20px;
+  border: 2px solid #00ff99;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #00ff99;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  background: #080c18;
+  border-top: 1px solid #00ffff55;
+}
+
+footer p {
+  margin-bottom: 20px;
+  color: #bbb;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* ========== Scroll Reveal ========== */
+.reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.reveal.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
